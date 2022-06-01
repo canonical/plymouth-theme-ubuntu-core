@@ -78,7 +78,10 @@ text_sprite = Sprite();
 #debug_sprite = Sprite();
 
 logo_filename = "ubuntu-core.png";
-logo.image = Image(logo_filename);
+logo.raw_image = Image(logo_filename);
+logo_w = 2*Window.GetWidth()/3;
+logo.image = logo.raw_image.Scale(logo_w, logo_w*logo.raw_image.GetHeight()/logo.raw_image.GetWidth());
+
 logo.sprite = Sprite();
 # Logo right on top of the low-half of the screen
 logo.x = Window.GetX() + Window.GetWidth()/2 - logo.image.GetWidth()/2;
