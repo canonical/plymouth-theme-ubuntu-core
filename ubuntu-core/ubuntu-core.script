@@ -1,6 +1,6 @@
 #  ubuntu-core.script - boot splash plugin
 # 
-#  Copyright (C) 2021 Canonical Ltd.
+#  Copyright (C) 2022 Canonical Ltd.
 # 
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -77,8 +77,11 @@ white.blue = 1.0;
 text_sprite = Sprite();
 #debug_sprite = Sprite();
 
-logo_filename = "ubuntu-core.png";
-logo.raw_image = Image(logo_filename);
+logo.raw_image = Image("run/mnt/gadget/splash/vendor-logo.png");
+if (logo.raw_image == NULL) {
+    logo.raw_image = Image("usr/share/plymouth/themes/ubuntu-core/ubuntu-core.png");
+}
+
 logo_w = 2*Window.GetWidth()/3;
 logo.image = logo.raw_image.Scale(logo_w, logo_w*logo.raw_image.GetHeight()/logo.raw_image.GetWidth());
 
@@ -88,7 +91,7 @@ logo.x = Window.GetX() + Window.GetWidth()/2 - logo.image.GetWidth()/2;
 logo.y = Window.GetY() + Window.GetHeight()/2 - logo.image.GetHeight();
 logo.z = 100;
 
-spin.base_name = "throbber-";
+spin.base_name = "usr/share/plymouth/themes/ubuntu-core/throbber-";
 spin.idx = 1;
 spin.refresh_rate = 5;
 spin.frame_cnt = 0;

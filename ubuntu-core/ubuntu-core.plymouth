@@ -4,5 +4,5 @@ Description=The default theme for Ubuntu Core.
 ModuleName=script
 
 [script]
-ImageDir=/usr/share/plymouth/themes/ubuntu-core
+ImageDir=/
 ScriptFile=/usr/share/plymouth/themes/ubuntu-core/ubuntu-core.script
