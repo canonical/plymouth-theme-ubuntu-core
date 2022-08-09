@@ -19,15 +19,11 @@
 
 fun WriteText(text, colour)
 {
-    # It looks like label-ft cannot handle well setting the font this way?
-    # We let it use defaults.
     # Ubuntu Font
-    # font = "Ubuntu, sans-serif 16";
-    # font_alignment = "center";
-    # image = Image.Text(text, colour.red, colour.green, colour.blue, colour.alpha,
-    #                    font, font_alignment);
-    image = Image.Text(text, colour.red, colour.green, colour.blue, colour.alpha);
-    return image;
+    font = "Ubuntu, sans-serif 16";
+    font_alignment = "center";
+    image = Image.Text(text, colour.red, colour.green, colour.blue, colour.alpha,
+                       font, font_alignment);
 }
 
 fun message_callback(message)
